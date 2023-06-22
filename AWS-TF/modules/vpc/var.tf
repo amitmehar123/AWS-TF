@@ -14,14 +14,14 @@ variable "vpc_id" {}
 
 variable "subnet_cidr1" {
 
-type = "list"
+type = list
 default = ["10.0.0.0/26","10.0.0.64/26"]
 
 }
 
 variable "subnet_cidr2" {
 
-type = "list"
+type = list
 default = ["10.0.0.128/26","10.0.0.192/26"]
 
 }
