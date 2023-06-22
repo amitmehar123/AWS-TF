@@ -1,11 +1,18 @@
-provider "aws" {
-  required_version = ">= 1.0.0"
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-  }
+terraform {
+ required_providers {
+   aws = {
+     source  = "hashicorp/aws"
+     version = "~> 4.18.0"
+   }
+ }
+
+ backend "s3" {
+   bucket = "tfbuckamit"
+   key    = "state"
+   region = "us-east-1"
+ }
 }
+
 ## code
 module "my_vpc" {
   source      = "./modules/vpc"
